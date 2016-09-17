@@ -23,8 +23,8 @@ configs_to_export = {
 
 def get_opt():
     parser = argparse.ArgumentParser(description="Export settings from one Rocket.Chat instance to another.")
-    parser.add_argument('-s', "--smtp", action='store_const', const=True, default=False)
-    parser.add_argument('-u', "--file-upload", action='store_const', const=True, default=False)
+    parser.add_argument('-s', "--smtp", action='store_const', const=True, default=False, help="Enable 'SMTP' configs to be exported.")
+    parser.add_argument('-u', "--file-upload", action='store_const', const=True, default=False, help="Enable 'File Upload' configs to be exported.")
     parser.add_argument("origin", help="The IP Address of the MongoDB database that you would like to export configs. Eg: 172.12.0.3:27017.", action='store')
     parser.add_argument("destiny", help="The IP Address of the MongoDB database that you would like to import configs. Eg: 172.12.0.5:27017", action='store')
     return parser.parse_args()
